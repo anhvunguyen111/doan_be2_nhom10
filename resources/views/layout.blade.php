@@ -59,7 +59,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="{{url('/index')}}">Home</a></li>
-                <li><a href="{{url('/shop-grid')}}">Shop</a></li>
+                <li><a href="{{route('shop-grid', ['id'=> 1])}}">Shop</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="{{url('/shoping-cart')}}">Shoping Cart</a></li>
@@ -136,7 +136,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="{{url('/index')}}">Home</a></li>
-                            <li><a href="{{url('/shop-grid')}}">Shop</a></li>
+                            <li><a href="{{route('shop-grid', ['id'=> 1]) }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="{{url('/shoping-cart')}}">Shoping Cart</a></li>

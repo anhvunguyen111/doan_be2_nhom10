@@ -3,6 +3,10 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\DetailProductController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +19,13 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
+Route::get('/shop-grid/{id}', [ProductController::class, 'index'])->name('shop-grid');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/{id}', [PageController::class, 'index']);
+Route::get('/', [PageController::class, 'home']);
+Route::get('/shop-details/{id}', [DetailProductController::class, 'index'])->name('shop-details');
+
+Route::get('/signin', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
